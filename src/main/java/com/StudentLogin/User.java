@@ -1,7 +1,7 @@
 package com.StudentLogin;
 
 public class User {
-	
+
 	private String userName,Password;
 
 	public String getUserName() {
@@ -26,6 +26,6 @@ public class User {
 		Password = password;
 	}
 
-	
-	
+
+
 }

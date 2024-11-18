@@ -12,16 +12,16 @@ public class LoginDao {
         String url = "jdbc:mysql://localhost:3306/student_login";
         String username = "root";
         String password = "root";
-        
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
-            
+
             String query = "INSERT INTO Login (UserName, Password) VALUES (?, ?)";
             PreparedStatement pst = con.prepareStatement(query);
             pst.setString(1, user.getUserName());
             pst.setString(2, user.getPassword());
-            
+
             int rowsAffected = pst.executeUpdate(); // Use executeUpdate for INSERT
             if (rowsAffected > 0) {
                 result = true; // If rows were inserted, set result to true
@@ -37,7 +37,7 @@ public class LoginDao {
                 e.printStackTrace();
             }
         }
-        
+
         return result;
     }
 }
